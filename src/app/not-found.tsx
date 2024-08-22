@@ -16,7 +16,6 @@ export default function NotFoundPage() {
         </HeadingComponent>
         <HeadingComponent className="sr-only">
           Error 404. Page not found
-          <br />
         </HeadingComponent>
         <SubheadingComponent className="my-5">
           Sorry, we couldn&apos;t find the page you&apos;re looking for

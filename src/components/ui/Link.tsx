@@ -12,7 +12,7 @@ const enum SIZES {
 
 export function PrimaryLinkComponent({
   children = "Link",
-  href = "",
+  href = "/",
   size = "medium",
   ...props
 }: {
@@ -47,7 +47,7 @@ export function PrimaryLinkComponent({
 
 export function SecondaryLinkComponent({
   children = "Link",
-  href = "",
+  href = "/",
   size = "medium",
   ...props
 }: {
@@ -82,7 +82,7 @@ export function SecondaryLinkComponent({
 
 export function TertiaryLinkComponent({
   children = "Link",
-  href = "",
+  href = "/",
   size = "medium",
   ...props
 }: {

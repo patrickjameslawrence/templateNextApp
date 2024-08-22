@@ -1,18 +1,19 @@
 /** @format */
 
 import {
-  HollowPrimaryButtonComponent,
-  PrimaryButtonComponent,
-  HollowSecondaryButtonComponent,
-  SecondaryButtonComponent,
-  HollowTertiaryButtonComponent,
-  TertiaryButtonComponent,
-  DisabledButtonComponent,
-  SuccessButtonComponent,
-  WarningButtonComponent,
   DestructiveButtonComponent,
+  DisabledButtonComponent,
+  HollowPrimaryButtonComponent,
+  HollowSecondaryButtonComponent,
+  HollowTertiaryButtonComponent,
+  PrimaryButtonComponent,
+  SecondaryButtonComponent,
+  SuccessButtonComponent,
+  TertiaryButtonComponent,
   TextButtonComponent,
+  WarningButtonComponent,
 } from "@/components/ui/Button"
+import { HeadingComponent } from "@/components/ui/Heading"
 import {
   PrimaryLinkComponent,
   SecondaryLinkComponent,
@@ -22,6 +23,7 @@ import {
 export default function IndexPage() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-5 p-24">
+      <HeadingComponent>Template App UI Kit</HeadingComponent>
       <div className="flex items-center gap-5">
         <PrimaryButtonComponent size="small" />
         <PrimaryButtonComponent />
