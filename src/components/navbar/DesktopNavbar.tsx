@@ -9,8 +9,8 @@ import {
   Cog6ToothIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline"
-import logo from "../../../public/images/logo.svg"
 import profile from "../../../public/images/profile.svg"
+import { BrandSection } from "./Navbar"
 
 const navbarLinks = ["Nav", "Links", "Here"]
 const profileLinks = [
@@ -37,7 +37,7 @@ export default function DesktopNavbarComponent({
   return (
     <div
       {...props}
-      className="hidden h-16 w-full border border-neutral-300 bg-neutral-200 md:flex dark:border-neutral-900 dark:bg-neutral-950"
+      className="hidden h-12 w-full border border-neutral-300 bg-neutral-200 md:flex dark:border-neutral-900 dark:bg-neutral-950"
     >
       <BrandSection />
       <ul className="flex items-center justify-center gap-10">
@@ -71,26 +71,11 @@ export default function DesktopNavbarComponent({
   )
 }
 
-function BrandSection() {
-  return (
-    <div className="flex w-1/6 items-center justify-center">
-      <PrimaryLinkComponent href="/">
-        <Image
-          height={30}
-          width={30}
-          src={logo}
-          alt="Brand logo"
-        />
-      </PrimaryLinkComponent>
-    </div>
-  )
-}
-
 function ProfileSection() {
   return (
     <div className="ml-auto flex items-center justify-end gap-5 text-right">
       <Popover>
-        <PopoverButton className="flex w-48 items-center gap-5 p-3 text-xs transition hover:bg-neutral-300 focus:outline-none dark:hover:bg-neutral-900">
+        <PopoverButton className="flex w-48 items-center gap-5 px-3 py-2 text-xs transition hover:bg-neutral-300 focus:outline-none dark:hover:bg-neutral-900">
           <div className="align-center flex flex-col items-start">
             <TertiaryLinkComponent
               size="small"
@@ -102,9 +87,10 @@ function ProfileSection() {
               <span className="text-neutral-500">@username</span>
             </TertiaryLinkComponent>
           </div>
+          <span className="sr-only">Open user menu</span>
           <Image
-            height={40}
-            width={40}
+            height={32}
+            width={32}
             src={profile}
             className="rounded-full"
             alt="User profile photo"
@@ -120,7 +106,7 @@ function ProfileSection() {
                 key={index}
                 href={link.text.toLowerCase()}
                 size="small"
-                className="flex items-center gap-2 px-3 py-1 transition hover:bg-neutral-900 hover:text-blue-500 hover:no-underline"
+                className="flex items-center gap-2 px-3 py-1 transition hover:bg-neutral-300 hover:text-blue-500 hover:no-underline dark:hover:bg-neutral-900"
               >
                 {link.icon}
                 {link.text}
