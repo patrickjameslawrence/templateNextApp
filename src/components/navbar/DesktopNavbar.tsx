@@ -76,7 +76,7 @@ function ProfileSection() {
     <div className="ml-auto flex items-center justify-end gap-5 text-right">
       <Popover>
         <PopoverButton className="flex w-48 items-center gap-5 px-3 py-2 text-xs transition hover:bg-neutral-300 focus:outline-none dark:hover:bg-neutral-900">
-          <div className="align-center flex flex-col items-start">
+          <div className="flex flex-col items-start">
             <TertiaryLinkComponent
               size="small"
               href="/profile"
@@ -92,7 +92,7 @@ function ProfileSection() {
             height={32}
             width={32}
             src={profile}
-            className="rounded-full"
+            className="rounded-full border-2 border-neutral-500"
             alt="User profile photo"
           />
         </PopoverButton>
