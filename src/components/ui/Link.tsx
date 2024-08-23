@@ -106,6 +106,7 @@ export function TertiaryLinkComponent({
                 ? SIZES.ExtraLarge
                 : SIZES.ExtraExtraLarge) +
         " decoration-2 underline-offset-4 transition hover:underline" +
+        " " +
         props.className
       }
     >

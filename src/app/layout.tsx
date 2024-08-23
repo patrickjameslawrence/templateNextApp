@@ -1,6 +1,6 @@
 /** @format */
 
-import NavbarComponent from "@/components/Navbar"
+import NavbarComponent from "@/components/navbar/Navbar"
 import "@/styles/globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="container mx-auto sm:my-8 sm:px-6 lg:px-8">
+        <div className="container mx-auto my-4 px-3 lg:px-4">
           <NavbarComponent />
           {children}
         </div>
