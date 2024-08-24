@@ -10,9 +10,7 @@ export function HeadingComponent({
   return (
     <h1
       {...props}
-      className={
-        "text-3xl font-bold tracking-tight sm:text-5xl " + props.className
-      }
+      className={"text-5xl font-bold tracking-tight " + props.className}
     >
       {children}
     </h1>

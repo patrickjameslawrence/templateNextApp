@@ -9,6 +9,7 @@ import {
   ArrowLeftStartOnRectangleIcon,
   Bars3Icon,
   Cog6ToothIcon,
+  LinkIcon,
   UserCircleIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline"
@@ -20,15 +21,15 @@ import { BrandSection } from "./Navbar"
 const navLinks = [
   {
     text: "Nav",
-    icon: <UserCircleIcon className="size-6" />,
+    icon: <LinkIcon className="size-6" />,
   },
   {
     text: "Links",
-    icon: <Cog6ToothIcon className="size-6" />,
+    icon: <LinkIcon className="size-6" />,
   },
   {
     text: "Here",
-    icon: <ArrowLeftStartOnRectangleIcon className="size-6" />,
+    icon: <LinkIcon className="size-6" />,
   },
 ]
 

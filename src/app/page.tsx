@@ -23,7 +23,7 @@ import {
 export default function IndexPage() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-5 p-24">
-      <HeadingComponent>Template App UI Kit</HeadingComponent>
+      <HeadingComponent>UI Kit</HeadingComponent>
       <div className="flex items-center gap-5">
         <PrimaryButtonComponent size="small" />
         <PrimaryButtonComponent />

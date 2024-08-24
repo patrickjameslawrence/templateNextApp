@@ -44,25 +44,25 @@ export default function DesktopNavbarComponent({
         {navbarLinks.map((link, index) => {
           const isCurrentPage = currentpage === link.toLowerCase()
           return (
-            <li
+            <PrimaryLinkComponent
               key={index}
+              href={link.toLowerCase()}
+              size="large"
               className={
-                (isCurrentPage
-                  ? "border-b-4 border-blue-500"
-                  : "border-neutral-500") +
-                " flex h-full w-20 items-center justify-center border-b-2 transition hover:border-blue-500 hover:bg-neutral-300 dark:hover:bg-neutral-900"
+                isCurrentPage ? "text-blue-500 dark:text-blue-500" : ""
               }
             >
-              <PrimaryLinkComponent
-                href={link.toLowerCase()}
-                size="large"
+              <li
                 className={
-                  isCurrentPage ? "text-blue-500 dark:text-blue-500" : ""
+                  (isCurrentPage
+                    ? "border-b-4 border-blue-500"
+                    : "border-neutral-500") +
+                  " flex h-12 w-20 items-center justify-center border-b-2 transition hover:border-blue-500 hover:bg-neutral-300 dark:hover:bg-neutral-900"
                 }
               >
                 {link}
-              </PrimaryLinkComponent>
-            </li>
+              </li>
+            </PrimaryLinkComponent>
           )
         })}
       </ul>
