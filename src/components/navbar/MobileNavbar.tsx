@@ -5,54 +5,27 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react"
-import {
-  ArrowLeftStartOnRectangleIcon,
-  Bars3Icon,
-  Cog6ToothIcon,
-  LinkIcon,
-  UserCircleIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline"
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import profile from "../../../public/images/profile.svg"
 import { TertiaryLinkComponent } from "../ui/Link"
 import { BrandSection } from "./Navbar"
 
-const navLinks = [
-  {
-    text: "Nav",
-    icon: <LinkIcon className="size-6" />,
-  },
-  {
-    text: "Links",
-    icon: <LinkIcon className="size-6" />,
-  },
-  {
-    text: "Here",
-    icon: <LinkIcon className="size-6" />,
-  },
-]
-
-const profileLinks = [
-  {
-    text: "Profile",
-    icon: <UserCircleIcon className="size-6" />,
-  },
-  {
-    text: "Settings",
-    icon: <Cog6ToothIcon className="size-6" />,
-  },
-  {
-    text: "Logout",
-    icon: <ArrowLeftStartOnRectangleIcon className="size-6" />,
-  },
-]
-
 export default function MobileNavbarComponent({
   currentpage,
+  navbarlinks,
+  userlinks,
   ...props
 }: {
   currentpage: string
+  navbarlinks: {
+    text: string
+    icon: React.ReactNode
+  }[]
+  userlinks: {
+    text: string
+    icon: React.ReactNode
+  }[]
 }) {
   return (
     <Disclosure>
@@ -76,7 +49,7 @@ export default function MobileNavbarComponent({
         </div>
       </div>
       <DisclosurePanel className="flex w-full flex-col items-center justify-start gap-1 border border-neutral-300 border-t-transparent bg-neutral-200 md:hidden dark:border-neutral-900 dark:bg-neutral-950">
-        {navLinks.map((link, index) => {
+        {navbarlinks.map((link, index) => {
           const isCurrentPage = currentpage === link.text.toLowerCase()
           return (
             <TertiaryLinkComponent
@@ -96,13 +69,20 @@ export default function MobileNavbarComponent({
             </TertiaryLinkComponent>
           )
         })}
-        <ProfileSection />
+        <UserProfileSection userlinks={userlinks} />
       </DisclosurePanel>
     </Disclosure>
   )
 }
 
-function ProfileSection() {
+function UserProfileSection({
+  userlinks,
+}: {
+  userlinks: {
+    text: string
+    icon: React.ReactNode
+  }[]
+}) {
   return (
     <>
       <div className="flex h-24 w-full items-center px-3 py-1 transition hover:bg-neutral-300 dark:hover:bg-neutral-900">
@@ -125,7 +105,7 @@ function ProfileSection() {
           </div>
         </TertiaryLinkComponent>
       </div>
-      {profileLinks.map((link, index) => {
+      {userlinks.map((link, index) => {
         return (
           <TertiaryLinkComponent
             key={index}

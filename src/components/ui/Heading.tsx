@@ -10,7 +10,10 @@ export function PrimaryHeadingComponent({
   return (
     <h1
       {...props}
-      className={"text-5xl font-bold tracking-tight " + props.className}
+      className={
+        "text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl " +
+        props.className
+      }
     >
       {children}
     </h1>
@@ -27,7 +30,10 @@ export function SecondaryHeadingComponent({
   return (
     <h2
       {...props}
-      className={"text-3xl font-bold tracking-tight " + props.className}
+      className={
+        "text-lg font-bold tracking-tight sm:text-xl md:text-2xl lg:text-3xl " +
+        props.className
+      }
     >
       {children}
     </h2>
@@ -44,7 +50,10 @@ export function SubheadingComponent({
   return (
     <p
       {...props}
-      className={"text-neutral-500 " + props.className}
+      className={
+        "text-sm text-neutral-500 sm:text-base md:text-lg lg:text-xl " +
+        props.className
+      }
     >
       {children}
     </p>

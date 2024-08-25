@@ -33,7 +33,7 @@ export default function NotFoundPage() {
           Sorry, we couldn&apos;t find the page you&apos;re looking for
         </SubheadingComponent>
         <SecondaryLinkComponent
-          size="large"
+          size="medium"
           href="/"
         >
           Go back home

@@ -4,35 +4,25 @@ import Image from "next/image"
 import { PrimaryLinkComponent, TertiaryLinkComponent } from "../ui/Link"
 
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react"
-import {
-  ArrowLeftStartOnRectangleIcon,
-  Cog6ToothIcon,
-  UserCircleIcon,
-} from "@heroicons/react/24/outline"
+import React from "react"
 import profile from "../../../public/images/profile.svg"
 import { BrandSection } from "./Navbar"
 
-const navbarLinks = ["Nav", "Links", "Here"]
-const profileLinks = [
-  {
-    text: "Profile",
-    icon: <UserCircleIcon className="size-6" />,
-  },
-  {
-    text: "Settings",
-    icon: <Cog6ToothIcon className="size-6" />,
-  },
-  {
-    text: "Logout",
-    icon: <ArrowLeftStartOnRectangleIcon className="size-6" />,
-  },
-]
-
 export default function DesktopNavbarComponent({
   currentpage,
+  navbarlinks,
+  userlinks,
   ...props
 }: {
   currentpage: string
+  navbarlinks: {
+    text: string
+    icon: React.ReactNode
+  }[]
+  userlinks: {
+    text: string
+    icon: React.ReactNode
+  }[]
 }) {
   return (
     <div
@@ -41,12 +31,12 @@ export default function DesktopNavbarComponent({
     >
       <BrandSection />
       <ul className="flex items-center justify-center gap-10">
-        {navbarLinks.map((link, index) => {
-          const isCurrentPage = currentpage === link.toLowerCase()
+        {navbarlinks.map((link, index) => {
+          const isCurrentPage = currentpage === link.text.toLowerCase()
           return (
             <PrimaryLinkComponent
               key={index}
-              href={link.toLowerCase()}
+              href={link.text.toLowerCase()}
               size="large"
               className={
                 isCurrentPage ? "text-blue-500 dark:text-blue-500" : ""
@@ -60,18 +50,25 @@ export default function DesktopNavbarComponent({
                   " flex h-12 w-20 items-center justify-center border-b-2 transition hover:border-blue-500 hover:bg-neutral-300 dark:hover:bg-neutral-900"
                 }
               >
-                {link}
+                {link.text}
               </li>
             </PrimaryLinkComponent>
           )
         })}
       </ul>
-      <ProfileSection />
+      <UserProfileSection userlinks={userlinks} />
     </div>
   )
 }
 
-function ProfileSection() {
+function UserProfileSection({
+  userlinks,
+}: {
+  userlinks: {
+    text: string
+    icon: React.ReactNode
+  }[]
+}) {
   return (
     <div className="ml-auto flex items-center justify-end gap-5 text-right">
       <Popover>
@@ -100,7 +97,7 @@ function ProfileSection() {
           anchor="bottom end"
           className="flex w-48 flex-col border border-neutral-300 border-t-transparent bg-neutral-200 dark:border-neutral-900 dark:bg-neutral-950"
         >
-          {profileLinks.map((link, index) => {
+          {userlinks.map((link, index) => {
             return (
               <TertiaryLinkComponent
                 key={index}
