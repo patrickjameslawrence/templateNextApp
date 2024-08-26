@@ -11,7 +11,7 @@ export default function ParagraphComponent({
     <p
       {...props}
       className={
-        "text-xs text-neutral-500 sm:text-sm md:text-base lg:text-lg " +
+        "text-tertiary text-xs sm:text-sm md:text-base lg:text-lg" +
         props.className
       }
     >

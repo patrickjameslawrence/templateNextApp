@@ -30,7 +30,7 @@ export function PrimaryButtonComponent({
             : size === "large"
               ? SIZES.Large
               : SIZES.ExtraLarge) +
-        " border-2 border-blue-500 bg-blue-500 font-semibold text-white shadow transition hover:border-blue-400 hover:bg-blue-400 active:scale-95 active:shadow-none dark:shadow-none" +
+        " border-primary bg-primary hover:border-hoveredPrimary hover:bg-hoveredPrimary border-2 font-semibold text-white shadow transition active:scale-95 active:shadow-none dark:shadow-none" +
         " " +
         props.className
       }
@@ -63,7 +63,7 @@ export function HollowPrimaryButtonComponent({
             : size === "large"
               ? SIZES.Large
               : SIZES.ExtraLarge) +
-        " border-2 border-blue-500 font-semibold text-blue-500 shadow transition hover:bg-blue-500 hover:text-white active:scale-95 active:shadow-none dark:shadow-none" +
+        " border-primary text-primary hover:bg-primary border-2 font-semibold shadow transition hover:text-white active:scale-95 active:shadow-none dark:shadow-none" +
         " " +
         props.className
       }
@@ -96,7 +96,7 @@ export function SecondaryButtonComponent({
             : size === "large"
               ? SIZES.Large
               : SIZES.ExtraLarge) +
-        " border-2 border-orange-500 bg-orange-500 font-semibold text-white transition hover:border-orange-400 hover:bg-orange-400 active:scale-95" +
+        " border-secondary bg-secondary hover:border-hoveredSecondary hover:bg-hoveredSecondary border-2 font-semibold text-white transition active:scale-95" +
         " " +
         props.className
       }
@@ -129,7 +129,7 @@ export function HollowSecondaryButtonComponent({
             : size === "large"
               ? SIZES.Large
               : SIZES.ExtraLarge) +
-        " border-2 border-orange-500 font-semibold text-orange-500 transition hover:bg-orange-500 hover:text-white active:scale-95" +
+        " border-secondary text-secondary hover:bg-secondary border-2 font-semibold transition hover:text-white active:scale-95" +
         " " +
         props.className
       }
@@ -162,7 +162,7 @@ export function TertiaryButtonComponent({
             : size === "large"
               ? SIZES.Large
               : SIZES.ExtraLarge) +
-        " border-2 border-neutral-500 bg-neutral-500 font-semibold text-white shadow transition hover:border-neutral-400 hover:bg-neutral-400 active:scale-95 active:shadow-none dark:shadow-none" +
+        " hover:border-hoveredTertiary hover:bg-hoveredTertiary border-tertiary bg-tertiary border-2 font-semibold text-white shadow transition active:scale-95 active:shadow-none dark:shadow-none" +
         " " +
         props.className
       }
@@ -195,7 +195,7 @@ export function HollowTertiaryButtonComponent({
             : size === "large"
               ? SIZES.Large
               : SIZES.ExtraLarge) +
-        " border-2 border-neutral-500 font-semibold text-neutral-500 shadow transition hover:bg-neutral-500 hover:text-white active:scale-95 active:shadow-none dark:shadow-none" +
+        " border-tertiary text-tertiary hover:bg-tertiary border-2 font-semibold shadow transition hover:text-white active:scale-95 active:shadow-none dark:shadow-none" +
         " " +
         props.className
       }
@@ -229,7 +229,7 @@ export function TextButtonComponent({
             : size === "large"
               ? SIZES.Large
               : SIZES.ExtraLarge) +
-        " border-2 border-transparent font-semibold text-black transition hover:border-neutral-300 hover:bg-neutral-300 hover:shadow active:shadow-none dark:text-white dark:shadow-none hover:dark:border-neutral-700 hover:dark:bg-neutral-700" +
+        " hover:bg-hoveredLightBackground hover:border-lightBorder hover:dark:border-darkBorder hover:dark:bg-hoveredDarkBackground border-2 border-transparent font-semibold text-black transition hover:shadow active:shadow-none dark:text-white dark:shadow-none" +
         " " +
         props.className
       }
@@ -264,7 +264,7 @@ export function DisabledButtonComponent({
             : size === "large"
               ? SIZES.Large
               : SIZES.ExtraLarge) +
-        " border-2 border-neutral-300 bg-neutral-300 font-semibold text-white transition dark:border-neutral-700 dark:bg-neutral-700" +
+        " border-2 border-neutral-500 bg-neutral-500 font-semibold text-white transition" +
         " " +
         props.className
       }

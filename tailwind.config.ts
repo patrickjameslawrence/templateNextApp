@@ -1,6 +1,7 @@
 /** @format */
 
 import type { Config } from "tailwindcss"
+import colors from "tailwindcss/colors"
 
 const config: Config = {
   content: [
@@ -10,6 +11,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: colors.blue[500],
+        hoveredPrimary: colors.blue[400],
+        secondary: colors.orange[500],
+        hoveredSecondary: colors.orange[400],
+        tertiary: colors.neutral[500],
+        hoveredTertiary: colors.neutral[400],
+        lightBackground: colors.neutral[200],
+        hoveredLightBackground: colors.neutral[300],
+        lightBorder: colors.neutral[300],
+        darkBackground: colors.neutral[950],
+        hoveredDarkBackground: colors.neutral[900],
+        darkBorder: colors.neutral[900],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

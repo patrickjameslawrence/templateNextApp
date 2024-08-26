@@ -27,7 +27,7 @@ export default function DesktopNavbarComponent({
   return (
     <div
       {...props}
-      className="hidden h-12 w-full border border-neutral-300 bg-neutral-200 md:flex dark:border-neutral-900 dark:bg-neutral-950"
+      className="dark:bg-darkBackground dark:border-darkBorder border-lightBorder bg-lightBackground hidden h-12 w-full border md:flex"
     >
       <BrandSection />
       <ul className="flex items-center justify-center gap-10">
@@ -38,16 +38,14 @@ export default function DesktopNavbarComponent({
               key={index}
               href={link.text.toLowerCase()}
               size="large"
-              className={
-                isCurrentPage ? "text-blue-500 dark:text-blue-500" : ""
-              }
+              className={isCurrentPage ? "text-primary dark:text-primary" : ""}
             >
               <li
                 className={
                   (isCurrentPage
-                    ? "border-b-4 border-blue-500"
-                    : "border-neutral-500") +
-                  " flex h-12 w-20 items-center justify-center border-b-2 transition hover:border-blue-500 hover:bg-neutral-300 dark:hover:bg-neutral-900"
+                    ? "border-primary border-b-4"
+                    : "border-tertiary") +
+                  " hover:border-primary hover:bg-hoveredLightBackground dark:hover:bg-hoveredDarkBackground flex h-12 w-20 items-center justify-center border-b-2 transition"
                 }
               >
                 {link.text}
@@ -72,7 +70,7 @@ function UserProfileSection({
   return (
     <div className="ml-auto flex items-center justify-end gap-5 text-right">
       <Popover>
-        <PopoverButton className="flex w-48 items-center gap-5 px-3 py-2 text-xs transition hover:bg-neutral-300 focus:outline-none dark:hover:bg-neutral-900">
+        <PopoverButton className="hover:bg-hoveredLightBackground dark:hover:bg-hoveredDarkBackground flex w-48 items-center gap-5 px-3 py-2 text-xs transition focus:outline-none">
           <div className="flex flex-col items-start">
             <TertiaryLinkComponent
               size="small"
@@ -81,7 +79,7 @@ function UserProfileSection({
             >
               User Profile
               <br />
-              <span className="text-neutral-500">@username</span>
+              <span className="text-tertiary">@username</span>
             </TertiaryLinkComponent>
           </div>
           <span className="sr-only">Open user menu</span>
@@ -89,13 +87,13 @@ function UserProfileSection({
             height={32}
             width={32}
             src={profile}
-            className="rounded-full border-2 border-neutral-500"
+            className="border-tertiary rounded-full border-2"
             alt="User profile photo"
           />
         </PopoverButton>
         <PopoverPanel
           anchor="bottom end"
-          className="flex w-48 flex-col border border-neutral-300 border-t-transparent bg-neutral-200 dark:border-neutral-900 dark:bg-neutral-950"
+          className="dark:bg-darkBackground dark:border-darkBorder border-lightBorder bg-lightBackground flex w-48 flex-col border border-t-transparent"
         >
           {userlinks.map((link, index) => {
             return (
@@ -103,7 +101,7 @@ function UserProfileSection({
                 key={index}
                 href={link.text.toLowerCase()}
                 size="small"
-                className="flex items-center gap-2 px-3 py-1 transition hover:bg-neutral-300 hover:text-blue-500 hover:no-underline dark:hover:bg-neutral-900"
+                className="hover:text-primary hover:bg-hoveredLightBackground dark:hover:bg-hoveredDarkBackground flex items-center gap-2 px-3 py-1 transition hover:no-underline"
               >
                 {link.icon}
                 {link.text}

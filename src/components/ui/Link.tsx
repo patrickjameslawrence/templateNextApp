@@ -35,7 +35,7 @@ export function PrimaryLinkComponent({
               : size === "extraLarge"
                 ? SIZES.ExtraLarge
                 : SIZES.ExtraExtraLarge) +
-        " font-bold text-neutral-500 transition hover:text-black dark:hover:text-white" +
+        " text-tertiary font-bold transition hover:text-black dark:hover:text-white" +
         " " +
         props.className
       }

@@ -51,7 +51,7 @@ export function SubheadingComponent({
     <p
       {...props}
       className={
-        "text-sm text-neutral-500 sm:text-base md:text-lg lg:text-xl " +
+        "text-tertiary text-sm sm:text-base md:text-lg lg:text-xl " +
         props.className
       }
     >

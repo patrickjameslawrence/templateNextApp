@@ -31,7 +31,7 @@ export default function MobileNavbarComponent({
     <Disclosure>
       <div
         {...props}
-        className="flex h-12 w-full items-center justify-between border border-neutral-300 bg-neutral-200 md:hidden dark:border-neutral-900 dark:bg-neutral-950"
+        className="dark:bg-darkBackground dark:border-darkBorder border-lightBorder bg-lightBackground flex h-12 w-full items-center justify-between border md:hidden"
       >
         <BrandSection />
         <div className="w-1/6">
@@ -48,7 +48,7 @@ export default function MobileNavbarComponent({
           </DisclosureButton>
         </div>
       </div>
-      <DisclosurePanel className="flex w-full flex-col items-center justify-start gap-1 border border-neutral-300 border-t-transparent bg-neutral-200 md:hidden dark:border-neutral-900 dark:bg-neutral-950">
+      <DisclosurePanel className="dark:bg-darkBackground dark:border-darkBorder border-lightBorder bg-lightBackground flex w-full flex-col items-center justify-start gap-1 border border-t-transparent md:hidden">
         {navbarlinks.map((link, index) => {
           const isCurrentPage = currentpage === link.text.toLowerCase()
           return (
@@ -58,10 +58,10 @@ export default function MobileNavbarComponent({
               size="extraLarge"
               className={
                 (isCurrentPage
-                  ? "border-blue-500 text-blue-500"
-                  : "border-neutral-500") +
+                  ? "border-primary text-primary"
+                  : "border-tertiary") +
                 " " +
-                "flex w-full items-center gap-2 border-l-2 border-blue-500 px-3 py-1 transition hover:bg-neutral-300 hover:text-blue-500 hover:no-underline dark:hover:bg-neutral-900"
+                "border-primary hover:text-primary hover:bg-hoveredLightBackground dark:hover:bg-hoveredDarkBackground flex w-full items-center gap-2 border-l-2 px-3 py-1 transition hover:no-underline"
               }
             >
               {link.icon}
@@ -85,7 +85,7 @@ function UserProfileSection({
 }) {
   return (
     <>
-      <div className="flex h-24 w-full items-center px-3 py-1 transition hover:bg-neutral-300 dark:hover:bg-neutral-900">
+      <div className="hover:bg-hoveredLightBackground dark:hover:bg-hoveredDarkBackground flex h-24 w-full items-center px-3 py-1 transition">
         <TertiaryLinkComponent
           size="large"
           href="/profile"
@@ -95,13 +95,13 @@ function UserProfileSection({
             height={64}
             width={64}
             src={profile}
-            className="rounded-full border-2 border-neutral-500"
+            className="border-tertiary rounded-full border-2"
             alt="User profile photo"
           />
           <div className="flex flex-col justify-center">
             User Profile
             <br />
-            <span className="text-neutral-500">@username</span>
+            <span className="text-tertiary">@username</span>
           </div>
         </TertiaryLinkComponent>
       </div>
@@ -111,7 +111,7 @@ function UserProfileSection({
             key={index}
             href={link.text.toLowerCase()}
             size="extraLarge"
-            className="flex w-full items-center gap-2 border-l-2 border-neutral-500 px-3 py-1 transition hover:bg-neutral-300 hover:text-blue-500 hover:no-underline dark:hover:bg-neutral-900"
+            className="hover:text-primary border-tertiary hover:bg-hoveredLightBackground dark:hover:bg-hoveredDarkBackground flex w-full items-center gap-2 border-l-2 px-3 py-1 transition hover:no-underline"
           >
             {link.icon}
             {link.text}
