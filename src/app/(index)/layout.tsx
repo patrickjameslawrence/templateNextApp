@@ -1,6 +1,5 @@
 /** @format */
 
-import NavbarComponent from "@/components/navbar/Navbar"
 import "@/styles/globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
   description: "A starter template for a next app",
 }
 
-export default function RootLayout({
+export default function HomeLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
@@ -21,7 +20,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="container mx-auto my-4 min-h-screen px-3 lg:px-4">
-          <NavbarComponent />
           {children}
         </div>
       </body>

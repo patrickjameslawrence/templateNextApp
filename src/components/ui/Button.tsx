@@ -4,7 +4,7 @@ const enum SIZES {
   Small = "text-xs px-2 py-1",
   Medium = "text-sm px-2.5 py-1.5",
   Large = "text-sm px-3.5 py-2.5",
-  ExtraLarge = "text-md px-4 py-3",
+  ExtraLarge = "text-base px-4 py-3",
 }
 
 export function PrimaryButtonComponent({
@@ -297,7 +297,7 @@ export function SuccessButtonComponent({
             : size === "large"
               ? SIZES.Large
               : SIZES.ExtraLarge) +
-        " border-2 border-green-500 bg-green-500 font-semibold text-white shadow transition hover:border-green-400 hover:bg-green-400 active:scale-95 active:shadow-none dark:shadow-none" +
+        " border-success bg-success hover:border-success hover:bg-success border-2 font-semibold text-white shadow transition active:scale-95 active:shadow-none dark:shadow-none" +
         " " +
         props.className
       }
@@ -330,7 +330,7 @@ export function WarningButtonComponent({
             : size === "large"
               ? SIZES.Large
               : SIZES.ExtraLarge) +
-        " border-2 border-yellow-500 bg-yellow-500 font-semibold text-white shadow transition hover:border-yellow-400 hover:bg-yellow-400 active:scale-95 active:shadow-none dark:shadow-none" +
+        " border-warning bg-warning hover:border-warning hover:bg-warning border-2 font-semibold text-white shadow transition active:scale-95 active:shadow-none dark:shadow-none" +
         " " +
         props.className
       }

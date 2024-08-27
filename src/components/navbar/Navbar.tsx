@@ -28,6 +28,10 @@ const navbarLinks = [
     text: "Here",
     icon: <LinkIcon className="size-6" />,
   },
+  {
+    text: "UI",
+    icon: <LinkIcon className="size-6" />,
+  },
 ]
 
 const userLinks = [
@@ -67,7 +71,7 @@ export default function NavbarComponent() {
 export function BrandSection() {
   return (
     <div className="flex w-1/6 items-center justify-center">
-      <PrimaryLinkComponent href="/">
+      <PrimaryLinkComponent href={navbarLinks[0].text.toLowerCase()}>
         <Image
           height={30}
           width={30}

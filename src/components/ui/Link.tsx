@@ -5,7 +5,7 @@ import Link from "next/link"
 const enum SIZES {
   Small = "text-xs",
   Medium = "text-sm",
-  Large = "text-md",
+  Large = "text-base",
   ExtraLarge = "text-lg",
   ExtraExtraLarge = "text-xl",
 }
@@ -70,7 +70,7 @@ export function SecondaryLinkComponent({
               : size === "extraLarge"
                 ? SIZES.ExtraLarge
                 : SIZES.ExtraExtraLarge) +
-        " font-bold decoration-2 underline-offset-4 transition hover:underline" +
+        " text-primary decoration-hoveredPrimary hover:text-hoveredPrimary font-bold decoration-2 underline-offset-4 transition hover:underline" +
         " " +
         props.className
       }

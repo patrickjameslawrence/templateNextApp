@@ -24,6 +24,9 @@ const config: Config = {
         darkBackground: colors.neutral[950],
         hoveredDarkBackground: colors.neutral[900],
         darkBorder: colors.neutral[900],
+        success: colors.green[500],
+        warning: colors.yellow[500],
+        destructive: colors.red[500],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
