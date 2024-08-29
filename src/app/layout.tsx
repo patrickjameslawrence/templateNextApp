@@ -11,18 +11,14 @@ export const metadata: Metadata = {
   description: "A starter template for a next app",
 }
 
-export default function HomeLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="container mx-auto my-4 min-h-screen px-3 lg:px-4">
-          {children}
-        </div>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

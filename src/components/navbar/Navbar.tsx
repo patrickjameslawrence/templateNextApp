@@ -2,67 +2,28 @@
 
 "use client"
 
-import {
-  ArrowLeftStartOnRectangleIcon,
-  Cog6ToothIcon,
-  LinkIcon,
-  UserCircleIcon,
-} from "@heroicons/react/24/outline"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import logo from "../../../public/images/logo.svg"
-import { PrimaryLinkComponent } from "../ui/Link"
 import DesktopNavbarComponent from "./DesktopNavbar"
 import MobileNavbarComponent from "./MobileNavbar"
 
-const navbarLinks = [
-  {
-    text: "Nav",
-    icon: <LinkIcon className="size-6" />,
-  },
-  {
-    text: "Links",
-    icon: <LinkIcon className="size-6" />,
-  },
-  {
-    text: "Here",
-    icon: <LinkIcon className="size-6" />,
-  },
-  {
-    text: "UI",
-    icon: <LinkIcon className="size-6" />,
-  },
-]
+import { User } from "@supabase/supabase-js"
+import LinkComponent from "../ui/link/Link"
+import { navbarLinks } from "./links"
 
-const userLinks = [
-  {
-    text: "Profile",
-    icon: <UserCircleIcon className="size-6" />,
-  },
-  {
-    text: "Settings",
-    icon: <Cog6ToothIcon className="size-6" />,
-  },
-  {
-    text: "Logout",
-    icon: <ArrowLeftStartOnRectangleIcon className="size-6" />,
-  },
-]
-
-export default function NavbarComponent() {
+export default function NavbarComponent({ user }: { user: User }) {
   const pathname = usePathname()
   const page = pathname.substring(1).split("/")[0]
   return (
     <nav>
       <DesktopNavbarComponent
         currentpage={page}
-        navbarlinks={navbarLinks}
-        userlinks={userLinks}
+        user={user}
       />
       <MobileNavbarComponent
         currentpage={page}
-        navbarlinks={navbarLinks}
-        userlinks={userLinks}
+        user={user}
       />
     </nav>
   )
@@ -71,14 +32,14 @@ export default function NavbarComponent() {
 export function BrandSection() {
   return (
     <div className="flex w-1/6 items-center justify-center">
-      <PrimaryLinkComponent href={navbarLinks[0].text.toLowerCase()}>
+      <LinkComponent href={navbarLinks[0].text.toLowerCase()}>
         <Image
           height={30}
           width={30}
           src={logo}
           alt="Brand logo"
         />
-      </PrimaryLinkComponent>
+      </LinkComponent>
     </div>
   )
 }

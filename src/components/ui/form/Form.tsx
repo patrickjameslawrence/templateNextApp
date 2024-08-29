@@ -1,14 +1,19 @@
 /** @format */
 
+import { FormProps } from "./Form.types"
+
 export default function FormComponent({
   children = "Form",
+  action,
+  className,
   ...props
-}: {
-  children?: React.ReactNode
-  className?: string
-}) {
+}: FormProps): React.ReactElement<FormProps> {
   return (
-    <form className={"flex w-full flex-col gap-3" + " " + props.className}>
+    <form
+      {...props}
+      className={`flex flex-col gap-3 ${className}`}
+      action={action}
+    >
       {children}
     </form>
   )

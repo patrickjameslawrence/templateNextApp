@@ -1,119 +1,168 @@
 /** @format */
 
-import {
-  DestructiveButtonComponent,
-  DisabledButtonComponent,
-  HollowPrimaryButtonComponent,
-  HollowSecondaryButtonComponent,
-  HollowTertiaryButtonComponent,
-  PrimaryButtonComponent,
-  SecondaryButtonComponent,
-  SuccessButtonComponent,
-  TertiaryButtonComponent,
-  TextButtonComponent,
-  WarningButtonComponent,
-} from "@/components/ui/Button"
-import { PrimaryHeadingComponent } from "@/components/ui/Heading"
-import {
-  PrimaryLinkComponent,
-  SecondaryLinkComponent,
-  TertiaryLinkComponent,
-} from "@/components/ui/Link"
+"use client"
+
+import ButtonComponent from "@/components/ui/button/Button"
+import HeadingComponent from "@/components/ui/heading/Heading"
 
 export default function NavLinkPage() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-5 p-24">
-      <PrimaryHeadingComponent>UI Kit</PrimaryHeadingComponent>
+      <HeadingComponent level="h1">UI Kit</HeadingComponent>
       <div className="flex items-center gap-5">
-        <PrimaryButtonComponent size="small" />
-        <PrimaryButtonComponent />
-        <PrimaryButtonComponent size="large" />
-        <PrimaryButtonComponent size="extraLarge" />
+        <ButtonComponent
+          onClick={() => {}}
+          size="small"
+        />
+        <ButtonComponent onClick={() => {}} />
+        <ButtonComponent
+          onClick={() => {}}
+          size="large"
+        />
       </div>
       <div className="flex items-center gap-5">
-        <HollowPrimaryButtonComponent size="small" />
-        <HollowPrimaryButtonComponent />
-        <HollowPrimaryButtonComponent size="large" />
-        <HollowPrimaryButtonComponent size="extraLarge" />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="hollow primary"
+          size="small"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="hollow primary"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="hollow primary"
+          size="large"
+        />
       </div>
       <div className="flex items-center gap-5">
-        <SecondaryButtonComponent size="small" />
-        <SecondaryButtonComponent />
-        <SecondaryButtonComponent size="large" />
-        <SecondaryButtonComponent size="extraLarge" />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="secondary"
+          size="small"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="secondary"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="secondary"
+          size="large"
+        />
       </div>
       <div className="flex items-center gap-5">
-        <HollowSecondaryButtonComponent size="small" />
-        <HollowSecondaryButtonComponent />
-        <HollowSecondaryButtonComponent size="large" />
-        <HollowSecondaryButtonComponent size="extraLarge" />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="hollow secondary"
+          size="small"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="hollow secondary"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="hollow secondary"
+          size="large"
+        />
       </div>
       <div className="flex items-center gap-5">
-        <TertiaryButtonComponent size="small" />
-        <TertiaryButtonComponent />
-        <TertiaryButtonComponent size="large" />
-        <TertiaryButtonComponent size="extraLarge" />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="tertiary"
+          size="small"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="tertiary"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="tertiary"
+          size="large"
+        />
       </div>
       <div className="flex items-center gap-5">
-        <HollowTertiaryButtonComponent size="small" />
-        <HollowTertiaryButtonComponent />
-        <HollowTertiaryButtonComponent size="large" />
-        <HollowTertiaryButtonComponent size="extraLarge" />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="hollow tertiary"
+          size="small"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="hollow tertiary"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="hollow tertiary"
+          size="large"
+        />
       </div>
       <div className="flex items-center gap-5">
-        <TextButtonComponent size="small" />
-        <TextButtonComponent />
-        <TextButtonComponent size="large" />
-        <TextButtonComponent size="extraLarge" />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="ghost"
+          size="small"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="ghost"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="ghost"
+          size="large"
+        />
       </div>
       <div className="flex items-center gap-5">
-        <DisabledButtonComponent size="small" />
-        <DisabledButtonComponent />
-        <DisabledButtonComponent size="large" />
-        <DisabledButtonComponent size="extraLarge" />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="success"
+          size="small"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="success"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="success"
+          size="large"
+        />
       </div>
       <div className="flex items-center gap-5">
-        <SuccessButtonComponent size="small" />
-        <SuccessButtonComponent />
-        <SuccessButtonComponent size="large" />
-        <SuccessButtonComponent size="extraLarge" />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="warning"
+          size="small"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="warning"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="warning"
+          size="large"
+        />
       </div>
       <div className="flex items-center gap-5">
-        <WarningButtonComponent size="small" />
-        <WarningButtonComponent />
-        <WarningButtonComponent size="large" />
-        <WarningButtonComponent size="extraLarge" />
-      </div>
-      <div className="flex items-center gap-5">
-        <DestructiveButtonComponent size="small" />
-        <DestructiveButtonComponent />
-        <DestructiveButtonComponent size="large" />
-        <DestructiveButtonComponent size="extraLarge" />
-      </div>
-
-      <div className="flex items-center gap-5">
-        <PrimaryLinkComponent size="small" />
-        <PrimaryLinkComponent />
-        <PrimaryLinkComponent size="medium" />
-        <PrimaryLinkComponent size="large" />
-        <PrimaryLinkComponent size="extraLarge" />
-        <PrimaryLinkComponent size="extraExtraLarge" />
-      </div>
-      <div className="flex items-center gap-5">
-        <SecondaryLinkComponent size="small" />
-        <SecondaryLinkComponent />
-        <SecondaryLinkComponent size="medium" />
-        <SecondaryLinkComponent size="large" />
-        <SecondaryLinkComponent size="extraLarge" />
-        <SecondaryLinkComponent size="extraExtraLarge" />
-      </div>
-      <div className="flex items-center gap-5">
-        <TertiaryLinkComponent size="small" />
-        <TertiaryLinkComponent />
-        <TertiaryLinkComponent size="medium" />
-        <TertiaryLinkComponent size="large" />
-        <TertiaryLinkComponent size="extraLarge" />
-        <TertiaryLinkComponent size="extraExtraLarge" />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="danger"
+          size="small"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="danger"
+        />
+        <ButtonComponent
+          onClick={() => {}}
+          variant="danger"
+          size="large"
+        />
       </div>
     </main>
   )

@@ -2,12 +2,8 @@
 
 import NavbarComponent from "@/components/navbar/Navbar"
 import "@/styles/globals.css"
-import { createClient } from "@/utils/supabase/server"
+import { createClient } from "@supabase/supabase-js"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { redirect } from "next/navigation"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Your page name here",
@@ -19,16 +15,18 @@ export default async function NavLinksLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const supabase = createClient()
+  const url = "https://zvvhkqmwsovsajkussdz.supabase.co"
+  const key =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp2dmhrcW13c292c2Fqa3Vzc2R6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQ3MjgwNTMsImV4cCI6MjA0MDMwNDA1M30.nirFcCxRXKmF9OHuAwdR6GbE4R1i5Iu-BIV70B5B8OM"
+  const supabase = createClient(url, key)
 
   const {
     data: { user },
   } = await supabase.auth.getUser()
 
   if (!user) {
-    redirect("/not-found")
+    //  redirect("/not-found")
   }
-
   return (
     <div className="container mx-auto my-4 min-h-screen px-3 lg:px-4">
       <NavbarComponent user={user} />

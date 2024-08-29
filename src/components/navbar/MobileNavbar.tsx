@@ -8,30 +8,25 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import profile from "../../../public/images/profile.svg"
-import { TertiaryLinkComponent } from "../ui/Link"
 import { BrandSection } from "./Navbar"
+
+import { User } from "@supabase/supabase-js"
+import LinkComponent from "../ui/link/Link"
+import { navbarLinks, userLinks } from "./links"
 
 export default function MobileNavbarComponent({
   currentpage,
-  navbarlinks,
-  userlinks,
+  user,
   ...props
 }: {
   currentpage: string
-  navbarlinks: {
-    text: string
-    icon: React.ReactNode
-  }[]
-  userlinks: {
-    text: string
-    icon: React.ReactNode
-  }[]
+  user: User
 }) {
   return (
     <Disclosure>
       <div
         {...props}
-        className="dark:bg-darkBackground dark:border-darkBorder border-lightBorder bg-lightBackground flex h-12 w-full items-center justify-between border md:hidden"
+        className="flex h-12 w-full items-center justify-between border border-lightBorder bg-lightBackground md:hidden dark:border-darkBorder dark:bg-darkBackground"
       >
         <BrandSection />
         <div className="w-1/6">
@@ -48,45 +43,40 @@ export default function MobileNavbarComponent({
           </DisclosureButton>
         </div>
       </div>
-      <DisclosurePanel className="dark:bg-darkBackground dark:border-darkBorder border-lightBorder bg-lightBackground flex w-full flex-col items-center justify-start gap-1 border border-t-transparent md:hidden">
-        {navbarlinks.map((link, index) => {
+      <DisclosurePanel className="flex w-full flex-col items-center justify-start gap-1 border border-lightBorder border-t-transparent bg-lightBackground md:hidden dark:border-darkBorder dark:bg-darkBackground">
+        {navbarLinks.map((link, index) => {
           const isCurrentPage = currentpage === link.text.toLowerCase()
           return (
-            <TertiaryLinkComponent
+            <LinkComponent
+              variant="tertiary"
               key={index}
               href={link.text.toLowerCase()}
-              size="extraLarge"
+              size="large"
               className={
                 (isCurrentPage
                   ? "border-primary text-primary"
                   : "border-tertiary") +
                 " " +
-                "border-primary hover:text-primary hover:bg-hoveredLightBackground dark:hover:bg-hoveredDarkBackground flex w-full items-center gap-2 border-l-2 px-3 py-1 transition hover:no-underline"
+                "flex w-full items-center gap-2 border-l-2 border-primary px-3 py-1 transition hover:bg-hoveredLightBackground hover:text-primary hover:no-underline dark:hover:bg-hoveredDarkBackground"
               }
             >
               {link.icon}
               {link.text}
-            </TertiaryLinkComponent>
+            </LinkComponent>
           )
         })}
-        <UserProfileSection userlinks={userlinks} />
+        <UserProfileSection user={user} />
       </DisclosurePanel>
     </Disclosure>
   )
 }
 
-function UserProfileSection({
-  userlinks,
-}: {
-  userlinks: {
-    text: string
-    icon: React.ReactNode
-  }[]
-}) {
+function UserProfileSection({ user }: { user: User }) {
   return (
     <>
-      <div className="hover:bg-hoveredLightBackground dark:hover:bg-hoveredDarkBackground flex h-24 w-full items-center px-3 py-1 transition">
-        <TertiaryLinkComponent
+      <div className="flex h-24 w-full items-center px-3 py-1 transition hover:bg-hoveredLightBackground dark:hover:bg-hoveredDarkBackground">
+        <LinkComponent
+          variant="tertiary"
           size="large"
           href="/profile"
           className="flex gap-5 hover:no-underline"
@@ -95,7 +85,7 @@ function UserProfileSection({
             height={64}
             width={64}
             src={profile}
-            className="border-tertiary rounded-full border-2"
+            className="rounded-full border-2 border-tertiary"
             alt="User profile photo"
           />
           <div className="flex flex-col justify-center">
@@ -103,19 +93,20 @@ function UserProfileSection({
             <br />
             <span className="text-tertiary">@username</span>
           </div>
-        </TertiaryLinkComponent>
+        </LinkComponent>
       </div>
-      {userlinks.map((link, index) => {
+      {userLinks.map((link, index) => {
         return (
-          <TertiaryLinkComponent
+          <LinkComponent
+            variant="tertiary"
             key={index}
             href={link.text.toLowerCase()}
-            size="extraLarge"
-            className="hover:text-primary border-tertiary hover:bg-hoveredLightBackground dark:hover:bg-hoveredDarkBackground flex w-full items-center gap-2 border-l-2 px-3 py-1 transition hover:no-underline"
+            size="large"
+            className="flex w-full items-center gap-2 border-l-2 border-tertiary px-3 py-1 transition hover:bg-hoveredLightBackground hover:text-primary hover:no-underline dark:hover:bg-hoveredDarkBackground"
           >
             {link.icon}
             {link.text}
-          </TertiaryLinkComponent>
+          </LinkComponent>
         )
       })}
     </>
