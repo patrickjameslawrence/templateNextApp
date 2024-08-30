@@ -11,8 +11,8 @@ export interface BaseHeadingProps {
   className?: string
 }
 
-export interface DefualtHeadingProps extends BaseHeadingProps {
-  varaint?: "default"
+export interface DefaultHeadingProps extends BaseHeadingProps {
+  variant?: "default"
 }
 
 export interface PrimaryHeadingProps extends BaseHeadingProps {
@@ -28,7 +28,7 @@ export interface TertiaryHeadingProps extends BaseHeadingProps {
 }
 
 export type HeadingProps =
-  | DefualtHeadingProps
+  | DefaultHeadingProps
   | PrimaryHeadingProps
   | SecondaryHeadingProps
   | TertiaryHeadingProps

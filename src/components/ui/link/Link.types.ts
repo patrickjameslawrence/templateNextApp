@@ -27,6 +27,7 @@ export interface TertiaryLinkProps extends BaseLinkProps {
 }
 
 export type LinkProps =
+  | DefaultLinkProps
   | PrimaryLinkProps
   | SecondaryLinkProps
   | TertiaryLinkProps

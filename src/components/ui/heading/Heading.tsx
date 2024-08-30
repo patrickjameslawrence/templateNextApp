@@ -10,7 +10,7 @@ export default function HeadingComponent({
   children = "Heading",
   className,
   ...props
-}: HeadingProps) {
+}: HeadingProps): React.ReactNode {
   // Function to determine the size class based on the size prop
   const getSizeClasses = (size: HeadingSize) => {
     switch (size) {

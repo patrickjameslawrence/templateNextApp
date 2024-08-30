@@ -1,5 +1,6 @@
 /** @format */
 
+import { CheckIcon } from "@heroicons/react/24/outline"
 import {
   CheckboxInputProps,
   EmailAddressInputProps,
@@ -54,13 +55,7 @@ export default function InputComponent({
       case "checkbox": {
         const { checked } = props as CheckboxInputProps
         return (
-          <div className="flex flex-col gap-1">
-            <label
-              htmlFor={id}
-              className={`font-semibold text-tertiary ${sizeClasses} ${requiredClasses}`}
-            >
-              {label}
-            </label>
+          <div className="flex items-center gap-3">
             <input
               {...props}
               id={id}
@@ -68,8 +63,15 @@ export default function InputComponent({
               type={type}
               checked={checked}
               required={required}
-              className={`${baseClasses} ${className}`}
+              className={`peer size-5 appearance-none border-2 border-lightBorder transition checked:border-transparent checked:bg-primary dark:border-darkBorder ${baseClasses} ${className}`}
             />
+            <label
+              htmlFor={id}
+              className={`font-semibold text-tertiary ${sizeClasses} ${requiredClasses}`}
+            >
+              {label}
+            </label>
+            <CheckIcon className="pointer-events-none absolute hidden size-5 text-white transition peer-checked:block" />
           </div>
         )
       }
@@ -101,7 +103,7 @@ export default function InputComponent({
           <div className="flex flex-col gap-1">
             <label
               htmlFor={id}
-              className={`font-semibold text-tertiary ${sizeClasses} ${requiredClasses}`}
+              className={`bg-primary px-2 py-1 text-center font-semibold hover:bg-hoveredPrimary ${sizeClasses} ${requiredClasses}`}
             >
               {label}
             </label>
@@ -111,7 +113,7 @@ export default function InputComponent({
               name={name}
               type={type}
               required={required}
-              className={`${baseClasses} ${className}`}
+              className={`hidden ${baseClasses} ${className}`}
             />
           </div>
         )

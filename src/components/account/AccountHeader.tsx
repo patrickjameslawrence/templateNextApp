@@ -1,10 +1,11 @@
 /** @format */
 
+"use client"
+
 import profile from "../../../public/images/profile.svg"
 
 import Image from "next/image"
-import HeadingComponent from "../ui/heading/Heading"
-import ParagraphComponent from "../ui/paragraph/Paragraph"
+import EditableTextComponent from "../ui/text/EditableText"
 
 export default function AccountHeader({ user }: { user: any }) {
   return (
@@ -17,16 +18,28 @@ export default function AccountHeader({ user }: { user: any }) {
         alt="User profile photo"
       />
       <div className="flex flex-col justify-center">
-        <HeadingComponent level="h1">Display name</HeadingComponent>
-        <HeadingComponent
-          level="h2"
-          variant="tertiary"
-        >
-          @username
-        </HeadingComponent>
-        <ParagraphComponent>
-          Biography. Lorem ipsum. Put some more text here
-        </ParagraphComponent>
+        <EditableTextComponent
+          id="displayName"
+          size="large"
+          label="Display Name"
+          type="text"
+          textvariant="name"
+          initialvalue="Template App User"
+        />
+        <EditableTextComponent
+          id="username"
+          label="Username"
+          type="text"
+          textvariant="username"
+          initialvalue="templateappuser"
+        />
+        <EditableTextComponent
+          id="biography"
+          label="Biography"
+          type="text"
+          textvariant="default"
+          initialvalue="User bio goes here"
+        />
       </div>
     </div>
   )
