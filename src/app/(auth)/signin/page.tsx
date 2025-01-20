@@ -26,6 +26,7 @@ export default function SignInPage() {
           name="email"
           size="small"
           label="Email"
+          placeholder="johndoe@example.com"
           required
         />
         <InputComponent
@@ -34,6 +35,7 @@ export default function SignInPage() {
           name="password"
           size="small"
           label="Password"
+          placeholder="••••••••••••"
           required
         />
         <ButtonComponent

@@ -19,7 +19,7 @@ export default function AccountComponent({ user }: { user: User | null }) {
 
       const { data, error, status } = await supabase
         .from("profiles")
-        .select(`full_name, username, website, avatar_url`)
+        .select(`display_name, username, website, avatar_url`)
         .eq("id", user?.id)
         .single()
 
@@ -29,7 +29,7 @@ export default function AccountComponent({ user }: { user: User | null }) {
       }
 
       if (data) {
-        setFullname(data.full_name)
+        setFullname(data.display_name)
         setUsername(data.username)
         setWebsite(data.website)
         setAvatarUrl(data.avatar_url)
@@ -60,7 +60,7 @@ export default function AccountComponent({ user }: { user: User | null }) {
 
       const { error } = await supabase.from("profiles").upsert({
         id: user?.id as string,
-        full_name: fullname,
+        display_name: fullname,
         username,
         website,
         avatar_url,

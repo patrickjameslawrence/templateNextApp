@@ -2,31 +2,36 @@
 
 "use client"
 
+import { useUserContext } from "@/contexts/userContext/UserContext"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import logo from "../../../public/images/logo.svg"
+import HeadingComponent from "../ui/heading/Heading"
+import LinkComponent from "../ui/link/Link"
 import DesktopNavbarComponent from "./DesktopNavbar"
+import { navbarLinks } from "./links"
 import MobileNavbarComponent from "./MobileNavbar"
 
-import { User } from "@supabase/supabase-js"
-import LinkComponent from "../ui/link/Link"
-import { navbarLinks } from "./links"
+export default function NavbarComponent() {
+  const userContext = useUserContext()
 
-export default function NavbarComponent({ user }: { user: User }) {
-  const pathname = usePathname()
-  const page = pathname.substring(1).split("/")[0]
-  return (
-    <nav>
-      <DesktopNavbarComponent
-        currentpage={page}
-        user={user}
-      />
-      <MobileNavbarComponent
-        currentpage={page}
-        user={user}
-      />
-    </nav>
-  )
+  if (userContext.user) {
+    const pathname = usePathname()
+    const page = pathname.substring(1).split("/")[0]
+    return (
+      <nav>
+        <DesktopNavbarComponent
+          currentpage={page}
+          user={userContext.user}
+        />
+        <MobileNavbarComponent
+          currentpage={page}
+          user={userContext.user}
+        />
+      </nav>
+    )
+  }
+  return <HeadingComponent level="h1">No user found</HeadingComponent>
 }
 
 export function BrandSection() {

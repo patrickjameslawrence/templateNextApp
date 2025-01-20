@@ -26,12 +26,12 @@ export default function SignUpPage() {
           name="email"
           size="small"
           label="Email"
-          placeholder="john.doe@example.com"
+          placeholder="johndoe@example.com"
           required
         />
         <InputComponent
           type="text"
-          textVariant="username"
+          textvariant="username"
           id="username"
           name="username"
           size="small"

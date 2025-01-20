@@ -33,7 +33,7 @@ export default function EditableTextComponent({
       case "medium":
         return "text-sm md:text-base lg:text-lg"
       case "large":
-        return "text-base md:text-lg"
+        return "text-lg md:text-xl lg:text-2xl"
       default:
         return ""
     }
@@ -86,7 +86,7 @@ export default function EditableTextComponent({
             className="flex items-center gap-3"
           >
             <span className="sr-only">Edit</span>
-            <TextComponent>
+            <TextComponent className={`${sizeClasses}`}>
               {textvariant === "username" ? "@" : ""}
               {value}
             </TextComponent>

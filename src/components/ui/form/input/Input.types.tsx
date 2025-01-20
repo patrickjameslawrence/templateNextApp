@@ -39,7 +39,7 @@ export interface PasswordInputProps extends BaseInputProps {
 }
 
 export interface TextInputProps extends BaseInputProps {
-  textVariant: TextVariant
+  textvariant: TextVariant
   placeholder?: string
 }
 

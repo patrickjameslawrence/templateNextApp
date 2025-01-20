@@ -6,6 +6,7 @@ import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react"
 import { User } from "@supabase/supabase-js"
 import profile from "../../../public/images/profile.svg"
 import LinkComponent from "../ui/link/Link"
+import TextComponent from "../ui/text/Text"
 import { BrandSection } from "./Navbar"
 import { navbarLinks, userLinks } from "./links"
 
@@ -58,6 +59,7 @@ function UserProfileSection({ user }: { user: User }) {
       <Popover>
         <PopoverButton className="flex h-12 w-48 items-center gap-5 px-3 py-2 text-xs transition hover:bg-hoveredLightBackground focus:outline-none dark:hover:bg-hoveredDarkBackground">
           <span className="sr-only">Open user menu</span>
+          <TextComponent>{user.email}</TextComponent>
           <Image
             height={32}
             width={32}

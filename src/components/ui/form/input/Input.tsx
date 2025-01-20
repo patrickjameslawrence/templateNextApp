@@ -169,9 +169,9 @@ export default function InputComponent({
     }
   }
 
-  const { textVariant, placeholder } = props as TextInputProps
+  const { textvariant, placeholder } = props as TextInputProps
 
-  switch (textVariant) {
+  switch (textvariant) {
     case "name":
       return (
         <div className="flex flex-col gap-1">

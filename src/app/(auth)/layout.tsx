@@ -2,17 +2,8 @@
 
 import LinkComponent from "@/components/ui/link/Link"
 import "@/styles/globals.css"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import Image from "next/image"
 import logo from "../../../public/images/logo.svg"
-
-const inter = Inter({ subsets: ["latin"] })
-
-export const metadata: Metadata = {
-  title: "Account",
-  description: "View, create, and sign in to accounts",
-}
 
 export default function AccountLayout({
   children,
